@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.connectorio</groupId>
+    <artifactId>bmshub</artifactId>
+    <version>0.10.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>core</artifactId>
+  <packaging>bundle</packaging>
+
+  <name>BMS Hub | Core - overlay</name>
+  <description>An overlay bundle which allows expansion of openHAB TypeParser.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openhab.core.bundles</groupId>
+      <artifactId>org.openhab.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.connectorio</groupId>
+      <artifactId>api</artifactId>
+      <version>0.10.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Export-Package>
+              org.eclipse.smarthome.core.*;-split-package:=merge-first
+            </Export-Package>
+            <Private-Package>
+              org.eclipse.smarthome.core.binding.internal.*,
+              org.eclipse.smarthome.core.thing.internal.*,
+              org.eclipse.smarthome.core.internal.*
+            </Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

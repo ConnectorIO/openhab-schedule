@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="bactest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <channel-type id="schedule">
+        <item-type>Schedule</item-type>
+        <label>Weekly schedule</label>
+        <description>A sample type which is intended to provide Schedule item types.</description>
+        <category>Calendar</category>
+        <state readOnly="false">
+        </state>
+    </channel-type>
+
+</thing:thing-descriptions>

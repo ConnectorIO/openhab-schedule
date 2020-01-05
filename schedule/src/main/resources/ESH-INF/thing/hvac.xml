@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="bactest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="hvac">
+        <label>Test HVAC unit</label>
+        <description>A test version of hvac unit</description>
+
+        <channels>
+            <channel id="weeklySchedule" typeId="schedule" />
+        </channels>
+    </thing-type>
+
+</thing:thing-descriptions>

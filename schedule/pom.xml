@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.connectorio</groupId>
+    <artifactId>bmshub</artifactId>
+    <version>0.10.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>schedule</artifactId>
+  <packaging>bundle</packaging>
+
+  <name>BMS Hub | Schedule</name>
+  <description>Support for schedule types.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openhab.core.bundles</groupId>
+      <artifactId>org.openhab.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.openhab.core.bundles</groupId>
+      <artifactId>org.openhab.core.thing</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.cmpn</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+      <dependency>
+          <groupId>com.connectorio</groupId>
+          <artifactId>api</artifactId>
+          <version>0.10.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Import-Package>
+              !org.eclipse.smarthome.core.internal.library.unit,
+              *
+            </Import-Package>
+            <Private-Package>
+              com.connectorio.bmshub.schedule.*,
+              org.eclipse.smarthome.core.library.types
+            </Private-Package>
+            <Export-Package>
+              !org.eclipse.smarthome.core.library.types
+            </Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
